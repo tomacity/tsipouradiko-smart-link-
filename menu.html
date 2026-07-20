@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Μενού — Το Τσιπουράδικο της Μυρσίνης</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #FBF3E7;
+    --ink: #2B2118;
+    --tan: #B89968;
+    --tan-deep: #a4835a;
+    --wine: #7A2331;
+    --line: #e4d5bd;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    min-height:100dvh;
+    padding:36px 20px 60px;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .wrap{max-width:420px;margin:0 auto;}
+  a.back{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--tan-deep);
+    text-decoration:none;
+    margin-bottom:26px;
+  }
+  h1{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:600;
+    color:var(--tan-deep);
+    font-size:26px;
+    text-align:center;
+    margin:0 0 4px;
+  }
+  .sub{
+    text-align:center;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:#8a7a63;
+    margin:0 0 34px;
+  }
+  .cat{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:19px;
+    color:var(--wine);
+    margin:34px 0 4px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--line);
+  }
+  .cat:first-of-type{margin-top:0;}
+  .subcat{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:#8a7a63;
+    margin:18px 0 8px;
+  }
+  .item{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    padding:9px 0;
+    border-bottom:1px dotted var(--line);
+  }
+  .item .name{
+    flex:1;
+    font-size:14.5px;
+    line-height:1.4;
+  }
+  .item .name .origin{
+    display:block;
+    font-size:11.5px;
+    color:#9c8a70;
+    margin-top:1px;
+  }
+  .item .price{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13.5px;
+    color:var(--tan-deep);
+    white-space:nowrap;
+  }
+  .note{
+    margin-top:44px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-size:11px;
+    line-height:1.7;
+    color:#8a7a63;
+    text-align:center;
+  }
+  .note p{margin:0 0 10px;}
+  .flag{
+    background:#f3e9d6;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:12px 14px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    line-height:1.6;
+    color:var(--wine);
+    margin-bottom:30px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← πίσω</a>
+  <h1>το Τσιπουράδικο της Μυρσίνης</h1>
+  <p class="sub">Μενού</p>
+
+  <div class="flag">
+    ⚠ Πρόχειρη μεταγραφή από φωτογραφία — παρακαλώ έλεγξε τιμές &amp; ονόματα πριν το κάνουμε live.
+  </div>
+
+  <div class="cat">Λίστα Κρασιών · Wine List</div>
+
+  <div class="subcat">Λευκά · White</div>
+  <div class="item">
+    <span class="name">The Duck White<span class="origin">Κτήμα Άλφα — Ασύρτικο, Ελλάδα</span></span>
+    <span class="price">24,00€</span>
+  </div>
+  <div class="item">
+    <span class="name">Μαλαγουζιά — Κτήμα Άλφα<span class="origin">Ασύρτικο / Μαλαγουζιά, Ελλάδα</span></span>
+    <span class="price">29,00€</span>
+  </div>
+  <div class="item">
+    <span class="name">Θαλασσίτης<span class="origin">Ασύρτικο, Σαντορίνη</span></span>
+    <span class="price">65,00€</span>
+  </div>
+
+  <div class="subcat">Ροζέ · Rosé</div>
+  <div class="item">
+    <span class="name">Ούζυρα Ροζέ — Οινοβοτανική<span class="origin">Ροζέ, Ελλάδα</span></span>
+    <span class="price">33,00€</span>
+  </div>
+  <div class="item">
+    <span class="name">Idylle D'Achinos — La Tour Melas<span class="origin">Grenache / Syrah, Γαλλία</span></span>
+    <span class="price">50,00€</span>
+  </div>
+  <div class="item">
+    <span class="name">Whispering Angel — Domaine Sacha Lichine<span class="origin">Ροζέ, Γαλλία</span></span>
+    <span class="price">27,00€</span>
+  </div>
+
+  <div class="subcat">Κόκκινα · Red</div>
+  <div class="item">
+    <span class="name">"Τρεις Λόφοι" — Κτήμα Κοτσικά<span class="origin">Κόκκινο, Ελλάδα</span></span>
+    <span class="price">—</span>
+  </div>
+
+  <div class="subcat">Αφρώδεις Οίνοι · Sparkling Wines</div>
+  <div class="item">
+    <span class="name">Montegrande Prosecco</span>
+    <span class="price">29,00€</span>
+  </div>
+  <div class="item">
+    <span class="name">Gemma Di Luna Moscato d'Asti</span>
+    <span class="price">29,00€</span>
+  </div>
+  <div class="item">
+    <span class="name">Moët &amp; Chandon Brut Imperial</span>
+    <span class="price">110,00€</span>
+  </div>
+  <div class="item">
+    <span class="name">Moët &amp; Chandon Ice Imperial</span>
+    <span class="price">120,00€</span>
+  </div>
+
+  <div class="cat">Τσίπουρο / Ούζο</div>
+  <div class="item"><span class="name">Τσίπουρο 200ml</span><span class="price">12,00€</span></div>
+  <div class="item"><span class="name">Μαστιχάτο / Πλωμαρίου 200ml</span><span class="price">11,00€</span></div>
+  <div class="item"><span class="name">Ούζο 200ml</span><span class="price">9,00€</span></div>
+  <div class="item"><span class="name">Ούζο Gold (premium) 200ml</span><span class="price">16,00€</span></div>
+
+  <div class="cat">Μπύρες · Beers</div>
+  <div class="item"><span class="name">Fischer 500ml</span><span class="price">6,00€</span></div>
+  <div class="item"><span class="name">Heineken 500ml</span><span class="price">4,50€</span></div>
+  <div class="item"><span class="name">Άλφα 500ml</span><span class="price">4,50€</span></div>
+  <div class="item"><span class="name">Alfa χωρίς αλκοόλ 250ml</span><span class="price">4,50€</span></div>
+
+  <div class="cat">Κρασί Χύμα · Wine (glass/500ml)</div>
+  <div class="item"><span class="name">Λευκό / Ροζέ / Κόκκινο 500ml (τοπικό)</span><span class="price">6,00 – 8,00€</span></div>
+  <div class="item"><span class="name">Coca-Cola / Schweppes 250ml</span><span class="price">3,50€</span></div>
+  <div class="item"><span class="name">Νερό 500ml / 1,5L</span><span class="price">2,00 – 3,50€</span></div>
+  <div class="item"><span class="name">Espresso single</span><span class="price">3,00€</span></div>
+
+  <div class="note">
+    <p><strong>Ενημερώστε μας για τυχόν αλλεργίες ή δυσανεξία στη γλουτένη</strong> για την ασφαλέστερη εξυπηρέτησή σας.</p>
+    <p>Το ψωμί μας είναι φρέσκο. Σε όλες τις σαλάτες χρησιμοποιούμε παρθένο ελαιόλαδο. Οι πατάτες είναι φρέσκιες και τηγανίζονται σε ηλιέλαιο. Με * χαρακτηρίζεται κατεψυγμένο προϊόν. Όπου φέτα, προστατευόμενη ονομασία προέλευσης (Π.Ο.Π.)</p>
+  </div>
+
+</div>
+</body>
+</html>
