@@ -6,7 +6,7 @@
 <title>Μενού — Το Τσιπουράδικο της Μυρσίνης</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,600;0,700;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper: #FBF3E7;
@@ -21,12 +21,12 @@
   body{
     background:var(--paper);
     color:var(--ink);
-    font-family:'Inter',sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif;
     min-height:100dvh;
-    padding:36px 20px 60px;
+    padding:36px 22px 70px;
     -webkit-tap-highlight-color:transparent;
   }
-  .wrap{max-width:420px;margin:0 auto;}
+  .wrap{max-width:440px;margin:0 auto;}
   a.back{
     display:inline-flex;
     align-items:center;
@@ -37,178 +37,246 @@
     text-transform:uppercase;
     color:var(--tan-deep);
     text-decoration:none;
-    margin-bottom:26px;
+    margin-bottom:22px;
   }
-  h1{
-    font-family:'Cormorant Garamond',serif;
-    font-style:italic;
-    font-weight:600;
-    color:var(--tan-deep);
-    font-size:26px;
-    text-align:center;
-    margin:0 0 4px;
+  .title-img{
+    display:block;
+    width:260px;
+    max-width:85%;
+    height:auto;
+    margin:0 auto 6px;
   }
   .sub{
     text-align:center;
     font-family:'IBM Plex Mono',monospace;
     font-size:10.5px;
-    letter-spacing:0.1em;
+    letter-spacing:0.14em;
     text-transform:uppercase;
     color:#8a7a63;
-    margin:0 0 34px;
+    margin:0 0 30px;
   }
+  .lead{
+    display:flex;
+    justify-content:space-between;
+    padding:6px 0;
+    font-size:14px;
+    color:#6b5d49;
+  }
+  .lead .price{font-family:'IBM Plex Mono',monospace;color:var(--tan-deep);}
   .cat{
-    font-family:'Cormorant Garamond',serif;
-    font-weight:600;
+    font-family:'Noto Serif',serif;
+    font-weight:700;
     font-size:19px;
     color:var(--wine);
-    margin:34px 0 4px;
+    margin:36px 0 6px;
     padding-bottom:8px;
     border-bottom:1px solid var(--line);
   }
-  .cat:first-of-type{margin-top:0;}
-  .subcat{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:10px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:#8a7a63;
-    margin:18px 0 8px;
+  .cat:first-of-type{margin-top:26px;}
+  .cat .en{
+    font-weight:600;
+    font-style:italic;
+    color:var(--tan-deep);
+    font-size:15px;
   }
   .item{
-    display:flex;
-    align-items:baseline;
-    gap:8px;
     padding:9px 0;
     border-bottom:1px dotted var(--line);
   }
-  .item .name{
+  .item-row{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  .item-row .name{
     flex:1;
     font-size:14.5px;
-    line-height:1.4;
+    font-weight:500;
+    line-height:1.35;
   }
-  .item .name .origin{
-    display:block;
-    font-size:11.5px;
-    color:#9c8a70;
-    margin-top:1px;
-  }
-  .item .price{
+  .item-row .price{
     font-family:'IBM Plex Mono',monospace;
     font-size:13.5px;
+    font-weight:500;
     color:var(--tan-deep);
     white-space:nowrap;
   }
+  .item .desc{
+    font-size:11.5px;
+    color:#9c8a70;
+    margin-top:2px;
+    line-height:1.5;
+  }
   .note{
     margin-top:44px;
-    padding-top:24px;
+    padding-top:22px;
     border-top:1px solid var(--line);
-    font-size:11px;
+    font-size:10.5px;
     line-height:1.7;
     color:#8a7a63;
     text-align:center;
   }
-  .note p{margin:0 0 10px;}
-  .flag{
-    background:#f3e9d6;
-    border:1px solid var(--line);
-    border-radius:4px;
-    padding:12px 14px;
+  .powered{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-top:34px;
     font-family:'IBM Plex Mono',monospace;
-    font-size:10.5px;
-    line-height:1.6;
-    color:var(--wine);
-    margin-bottom:30px;
+    font-size:10px;
+    color:#8a7a63;
   }
+  .powered img{height:16px;width:auto;}
 </style>
 </head>
 <body>
 <div class="wrap">
   <a class="back" href="index.html">← πίσω</a>
-  <h1>το Τσιπουράδικο της Μυρσίνης</h1>
+  <img class="title-img" src="tsipouradiko-title.png" alt="το Τσιπουράδικο της Μυρσίνης">
   <p class="sub">Μενού</p>
 
-  <div class="flag">
-    ⚠ Πρόχειρη μεταγραφή από φωτογραφία — παρακαλώ έλεγξε τιμές &amp; ονόματα πριν το κάνουμε live.
-  </div>
+  <div class="lead"><span>Ελαιόλαδο 50ml</span><span class="price">2,50€</span></div>
+  <div class="lead"><span>Ψωμάκι</span><span class="price">1,50€</span></div>
 
-  <div class="cat">Λίστα Κρασιών · Wine List</div>
+  <div class="cat">Σαλάτες <span class="en">· Salads</span></div>
+  <div class="item"><div class="item-row"><span class="name">Σαλάτα απ' το χωριό</span><span class="price">9,50€</span></div><div class="desc">ντομάτα, φέτα, ελαιόλαδο</div></div>
+  <div class="item"><div class="item-row"><span class="name">Παξιμαδοσαλάτα</span><span class="price">9,00€</span></div><div class="desc">παξιμάδι, λιαστή ντομάτα, ντοματίνια, ελαιόλαδο, φέτα, καπαρόφυλλα</div></div>
+  <div class="item"><div class="item-row"><span class="name">Σαλάτα Ζυμαρικών με κοτόπουλο</span><span class="price">11,00€</span></div><div class="desc">κοτόπουλο στήθος, πέννες, παρμεζάνα, ντρεσσάρισμα με πιπεριές, ντομάτα, ελαιόλαδο</div></div>
+  <div class="item"><div class="item-row"><span class="name">Σαλάτα με ντοματίνια, κάπαρη, μυζήθρα &amp; λάδι βασιλικού</span><span class="price">11,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Παντζαροσαλάτα με γιαούρτι</span><span class="price">9,00€</span></div><div class="desc">παντζάρι, τζατζίκι, γιαούρτι</div></div>
+  <div class="item"><div class="item-row"><span class="name">Σαλάτα με πλιγούρι</span><span class="price">9,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Πράσινη σαλάτα με πεπόνι και λούζα</span><span class="price">11,00€</span></div><div class="desc">ρόκα, σπανάκι, γκρέιπφρουτ, σος βασιλικού</div></div>
 
-  <div class="subcat">Λευκά · White</div>
-  <div class="item">
-    <span class="name">The Duck White<span class="origin">Κτήμα Άλφα — Ασύρτικο, Ελλάδα</span></span>
-    <span class="price">24,00€</span>
-  </div>
-  <div class="item">
-    <span class="name">Μαλαγουζιά — Κτήμα Άλφα<span class="origin">Ασύρτικο / Μαλαγουζιά, Ελλάδα</span></span>
-    <span class="price">29,00€</span>
-  </div>
-  <div class="item">
-    <span class="name">Θαλασσίτης<span class="origin">Ασύρτικο, Σαντορίνη</span></span>
-    <span class="price">65,00€</span>
-  </div>
+  <div class="cat">Ορεκτικά <span class="en">· Starters</span></div>
+  <div class="item"><div class="item-row"><span class="name">Μελιτζανοσαλάτα καπνιστή</span><span class="price">6,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Τυροκαυτερή</span><span class="price">6,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Τζατζίκι</span><span class="price">6,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Ταραμοσαλάτα</span><span class="price">7,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Φάβα</span><span class="price">7,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Σαν Μιχάλη</span><span class="price">7,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Φέτα</span><span class="price">6,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Πατάτες τηγανητές στο χέρι</span><span class="price">6,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Πατάτες τηγανητές με κρέμα τυριών &amp; μπέικον</span><span class="price">8,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Αρσενικά λουκάνικα τηγανιτά</span><span class="price">8,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Κολοκυθάκια τηγανιτά με σαλτσάκι</span><span class="price">8,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Κρεμμυδόπιτα Σουρωτικού με μπύρα της Μυρσίνης</span><span class="price">9,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Πιπεριές με τυριά &amp; μπέικον στο φούρνο</span><span class="price">9,00€</span></div></div>
 
-  <div class="subcat">Ροζέ · Rosé</div>
-  <div class="item">
-    <span class="name">Ούζυρα Ροζέ — Οινοβοτανική<span class="origin">Ροζέ, Ελλάδα</span></span>
-    <span class="price">33,00€</span>
-  </div>
-  <div class="item">
-    <span class="name">Idylle D'Achinos — La Tour Melas<span class="origin">Grenache / Syrah, Γαλλία</span></span>
-    <span class="price">50,00€</span>
-  </div>
-  <div class="item">
-    <span class="name">Whispering Angel — Domaine Sacha Lichine<span class="origin">Ροζέ, Γαλλία</span></span>
-    <span class="price">27,00€</span>
-  </div>
+  <div class="cat">Θαλασσινά <span class="en">· Seafood</span></div>
+  <div class="item"><div class="item-row"><span class="name">Γαύρος μαρινάτος</span><span class="price">9,50€</span></div><div class="desc">πάνω σε φρυγανισμένο ψωμάκι με κρέμα ελαιόλαδο &amp; σκόρδο</div></div>
+  <div class="item"><div class="item-row"><span class="name">Γαύρος τηγανιτός</span><span class="price">10,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μύδια σαγανάκι</span><span class="price">14,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Καλαμαράκι τηγανιτό</span><span class="price">12,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Χταπόδι καραμελωμένο πάνω σε φάβα</span><span class="price">17,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Κολοκυθάκι με πέστο βασιλικού, ρόκα &amp; φέτα</span><span class="price">16,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μακαρονάδα θαλασσινών</span><span class="price">17,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Ταλιατέλλες με καπνιστό σολομό &amp; μελάνι σουπιάς</span><span class="price">16,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Σκάμπι</span><span class="price">17,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Αστακομακαρονάδα</span><span class="price">95,00€</span></div><div class="desc">για 2 ή 4 άτομα</div></div>
+  <div class="item"><div class="item-row"><span class="name">Σαρδέλες ψητές</span><span class="price">11,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μπακαλιάρος τηγανιτός σε σκορδαλιά παντζαριού</span><span class="price">12,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Γούνα ψαριού</span><span class="price">16,00€</span></div></div>
 
-  <div class="subcat">Κόκκινα · Red</div>
-  <div class="item">
-    <span class="name">"Τρεις Λόφοι" — Κτήμα Κοτσικά<span class="origin">Κόκκινο, Ελλάδα</span></span>
-    <span class="price">—</span>
-  </div>
+  <div class="cat">Κρεατικά <span class="en">· Meats</span></div>
+  <div class="item"><div class="item-row"><span class="name">Παντσέτα με σος μουστάρδας &amp; πατάτες</span><span class="price">11,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Γιουβέτσι με μπιφτέκι</span><span class="price">14,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Καρμπονάτο δεντρολίβανο</span><span class="price">11,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Χοιρινή τηγανιά</span><span class="price">11,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μπιφτέκι δροσερό</span><span class="price">12,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Ψαρόνειφτα με σελίνο μανιτάρια</span><span class="price">13,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Καλαμάρια με κρέμα μπέικον</span><span class="price">12,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μπριζόλα χοιρινή</span><span class="price">12,50€</span></div></div>
 
-  <div class="subcat">Αφρώδεις Οίνοι · Sparkling Wines</div>
-  <div class="item">
-    <span class="name">Montegrande Prosecco</span>
-    <span class="price">29,00€</span>
-  </div>
-  <div class="item">
-    <span class="name">Gemma Di Luna Moscato d'Asti</span>
-    <span class="price">29,00€</span>
-  </div>
-  <div class="item">
-    <span class="name">Moët &amp; Chandon Brut Imperial</span>
-    <span class="price">110,00€</span>
-  </div>
-  <div class="item">
-    <span class="name">Moët &amp; Chandon Ice Imperial</span>
-    <span class="price">120,00€</span>
-  </div>
+  <div class="cat">Ζεστά πιάτα <span class="en">· Hot Dishes</span></div>
+  <div class="item"><div class="item-row"><span class="name">Μελιτζάνες πλακί με τραγανή φέτα</span><span class="price">9,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μανιτάρια με στοιχεία, κρέμα &amp; καπνιστό τυρί</span><span class="price">10,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μανιτάρια με φέτα &amp; μέλι</span><span class="price">10,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Πατάτες με κρέμα μπέικον, φέτα &amp; τσιπς σπανάκι</span><span class="price">11,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Κοτόπουλο με κρέμα μπέικον &amp; ρύζι μπασμάτι</span><span class="price">11,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Σκιουφιχτά με λαγανό &amp; φέτα</span><span class="price">11,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μανιταρόνια με ρόκα</span><span class="price">12,00€</span></div></div>
 
-  <div class="cat">Τσίπουρο / Ούζο</div>
-  <div class="item"><span class="name">Τσίπουρο 200ml</span><span class="price">12,00€</span></div>
-  <div class="item"><span class="name">Μαστιχάτο / Πλωμαρίου 200ml</span><span class="price">11,00€</span></div>
-  <div class="item"><span class="name">Ούζο 200ml</span><span class="price">9,00€</span></div>
-  <div class="item"><span class="name">Ούζο Gold (premium) 200ml</span><span class="price">16,00€</span></div>
+  <div class="cat">Τα γλυκά μας <span class="en">· Our sweets</span></div>
+  <div class="item"><div class="item-row"><span class="name">Παστοκελίτσα του σπιτιού</span><span class="price">7,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Cheesecake με μηλόμελ της γιαγιάς</span><span class="price">7,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Ζυμαρικατή καρυδόπιτα με σοκολάτα</span><span class="price">7,00€</span></div></div>
 
-  <div class="cat">Μπύρες · Beers</div>
-  <div class="item"><span class="name">Fischer 500ml</span><span class="price">6,00€</span></div>
-  <div class="item"><span class="name">Heineken 500ml</span><span class="price">4,50€</span></div>
-  <div class="item"><span class="name">Άλφα 500ml</span><span class="price">4,50€</span></div>
-  <div class="item"><span class="name">Alfa χωρίς αλκοόλ 250ml</span><span class="price">4,50€</span></div>
+  <div class="cat">Λίστα Κρασιών <span class="en">· Wine List</span></div>
 
-  <div class="cat">Κρασί Χύμα · Wine (glass/500ml)</div>
-  <div class="item"><span class="name">Λευκό / Ροζέ / Κόκκινο 500ml (τοπικό)</span><span class="price">6,00 – 8,00€</span></div>
-  <div class="item"><span class="name">Coca-Cola / Schweppes 250ml</span><span class="price">3,50€</span></div>
-  <div class="item"><span class="name">Νερό 500ml / 1,5L</span><span class="price">2,00 – 3,50€</span></div>
-  <div class="item"><span class="name">Espresso single</span><span class="price">3,00€</span></div>
+  <div class="item"><div class="item-row"><span class="name" style="font-weight:700;">ΛΕΥΚΑ</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">The Duck White — Κτήμα Άλφα</span><span class="price">24,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μαλαγουζιά — Κτήμα Άλφα</span><span class="price">29,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Θαλασσίτης</span><span class="price">65,00€</span></div></div>
+
+  <div class="item"><div class="item-row"><span class="name" style="font-weight:700;">ΡΟΖΕ</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Ούζυρα Ροζέ</span><span class="price">33,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Idylle D'Achinos — La Tour Melas</span><span class="price">50,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Whispering Angel — Domaine Sacha Lichine</span><span class="price">27,00€</span></div></div>
+
+  <div class="item"><div class="item-row"><span class="name" style="font-weight:700;">ΑΦΡΩΔΕΙΣ ΟΙΝΟΙ · SPARKLING</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Montegrande Prosecco</span><span class="price">29,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Gemma Di Luna Moscato d'Asti</span><span class="price">29,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Moët &amp; Chandon Brut Imperial</span><span class="price">110,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Moët &amp; Chandon Ice Imperial</span><span class="price">120,00€</span></div></div>
+
+  <div class="cat">Τσίπουρο <span class="en">· Τσίπουρο</span></div>
+  <div class="item"><div class="item-row"><span class="name">Μακρυγιάννης 200ml</span><span class="price">12,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Δεκαράκι 200ml</span><span class="price">11,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Καλαβέζι 200ml</span><span class="price">11,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Γάτσιος 200ml</span><span class="price">11,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Ηδύνικο 200ml</span><span class="price">12,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μπατζίμ 200ml</span><span class="price">12,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Αποστολάκη 200ml</span><span class="price">12,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Αγοράνθη Παλαιάκι σκάρος 200ml</span><span class="price">12,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Πρώιτο αποστάξεις μικρού αποσταγματοποιού / Τσίπουρου</span><span class="price">12,00€</span></div></div>
+
+  <div class="cat">Ούζο <span class="en">· Ouzo</span></div>
+  <div class="item"><div class="item-row"><span class="name">Μακρυγιάννης 200ml</span><span class="price">10,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Πλωμάρι 200ml</span><span class="price">10,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Βαρβαγιάννη γαλάζιο 200ml</span><span class="price">10,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Βαρβαγιάννη πράσινο 200ml</span><span class="price">11,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Πλωματζίμ 200ml</span><span class="price">10,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Ιδύνικο 200ml</span><span class="price">10,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Απαλανίνα 200ml</span><span class="price">10,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μελτέμι 200ml</span><span class="price">10,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μελτέμι gold (premium) 200ml</span><span class="price">10,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Ούζο 250ml</span><span class="price">9,00€</span></div></div>
+
+  <div class="cat">Μπύρες <span class="en">· Beers</span></div>
+  <div class="item"><div class="item-row"><span class="name">Άλφα 500ml</span><span class="price">4,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Άλφα χωρίς αλκοόλ 500ml</span><span class="price">4,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Heineken 500ml</span><span class="price">4,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Fischer 500ml</span><span class="price">4,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Μάμος 500ml</span><span class="price">5,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Syra beer (local) 500ml</span><span class="price">5,00€</span></div></div>
+
+  <div class="cat">Κρασί χύμα <span class="en">· Wine</span></div>
+  <div class="item"><div class="item-row"><span class="name">Κρασί λευκό 500ml</span><span class="price">6,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Κρασί ροζέ 500ml</span><span class="price">6,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Κρασί κόκκινο 500ml</span><span class="price">6,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Κρασί ημίγλυκο κόκκινο - Λευκό 500ml</span><span class="price">7,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">ΜΑΛΑΜΑ ρετσίνα 500ml</span><span class="price">8,00€</span></div></div>
+
+  <div class="cat">Αναψυκτικά &amp; λοιπά ποτά <span class="en">· Soft Drinks &amp; more</span></div>
+  <div class="item"><div class="item-row"><span class="name">Coca-Cola 250ml (zero, regular, χωρίς καφεΐνη)</span><span class="price">3,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Fanta 250ml (πορτοκάλι, μπλε, λεμόνι)</span><span class="price">3,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Sprite 250ml</span><span class="price">3,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Schweppes 250ml (soda water)</span><span class="price">3,50€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Ανθρακούχο νερό Aqua Carpatica 330ml / φυσικό ή ανθρακούχο</span><span class="price">4,00 – 7,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Νερό φυσικό μεταλλικό AVRA 1L</span><span class="price">2,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Ποτά 500ml – 700ml</span><span class="price">8,00 – 80,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Ειδικά ποτά – 700ml</span><span class="price">10,00 – 100,00€</span></div></div>
+  <div class="item"><div class="item-row"><span class="name">Εσπρέσσο μόνο – Espresso single</span><span class="price">3,00€</span></div></div>
 
   <div class="note">
-    <p><strong>Ενημερώστε μας για τυχόν αλλεργίες ή δυσανεξία στη γλουτένη</strong> για την ασφαλέστερη εξυπηρέτησή σας.</p>
+    <p>Ενημερώστε μας για τυχόν αλλεργίες ή δυσανεξία στη γλουτένη για την ασφαλέστερη εξυπηρέτησή σας.</p>
     <p>Το ψωμί μας είναι φρέσκο. Σε όλες τις σαλάτες χρησιμοποιούμε παρθένο ελαιόλαδο. Οι πατάτες είναι φρέσκιες και τηγανίζονται σε ηλιέλαιο. Με * χαρακτηρίζεται κατεψυγμένο προϊόν. Όπου φέτα, προστατευόμενη ονομασία προέλευσης (Π.Ο.Π.)</p>
   </div>
 
+  <div class="powered">
+    powered by :
+    <img src="zisto-wordmark.png" alt="Zisto">
+  </div>
 </div>
 </body>
 </html>
