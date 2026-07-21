@@ -72,6 +72,41 @@
     text-decoration:none;
     margin-bottom:22px;
   }
+     .langswitch{
+    display:inline-flex;
+    align-items:center;
+    gap:0;
+    border:1px solid var(--tan);
+    border-radius:20px;
+    overflow:hidden;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:0.04em;
+  }
+  .langswitch button{
+    border:none;
+    background:transparent;
+    color:var(--tan-deep);
+    padding:6px 12px;
+    cursor:pointer;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:0.04em;
+  }
+  .langswitch button.active{
+    background:var(--tan);
+    color:#fff8ec;
+  }
+  .en-text{display:none;}
+  body.lang-en .el-text{display:none;}
+  body.lang-en .en-text{display:inline;}
+  .title-img{
+    display:block;
+    width:260px;
+    max-width:85%;
+    height:auto;
+    margin:0 auto 6px;
+  }
   .title-img{
     display:block;
     width:260px;
