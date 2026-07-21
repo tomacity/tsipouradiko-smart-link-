@@ -213,16 +213,24 @@
 </nav>
 <div class="nav-spacer"></div>
 <div class="wrap">
+  <div class="topbar">
+    <a class="back" href="index.html"><span class="el-text">← πίσω</span><span class="en-text">← back</span></a>
+    <div class="langswitch">
+      <button type="button" id="btn-el" class="active" onclick="setLang('el')">ΕΛ</button>
+      <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+   
   <a class="back" href="index.html">← πίσω</a>
   <img class="title-img" src="tsipouradiko-title.png" alt="το Τσιπουράδικο της Μυρσίνης">
-  <p class="sub">Μενού</p>
+  <p class="sub"><span class="el-text">Μενού</span><span class="en-text">Menu</span></p>
 
-  <div class="lead"><span>Ελαιόλαδο 50ml</span><span class="price">2,50€</span></div>
-  <div class="lead"><span>Ψωμάκι</span><span class="price">1,50€</span></div>
+  <div class="lead"><span>Ελαιόλαδο 50ml</span><span class="en-text">Olive oil</span><span class="price">2,50€</span></div>
+  <div class="lead"><span>Ψωμάκι</span><span class="en-text">Bread</span><span class="price">1,50€</span></div>
 
   <div class="cat" id="salades">Σαλάτες <span class="en">· Salads</span></div>
-  <div class="item"><div class="item-row"><span class="name">Σαλάτα απ' το χωριό</span><span class="price">9,50€</span></div><div class="desc">Με φέτα ή ξινομυζήθρα</div></div>
-  <div class="item"><div class="item-row"><span class="name">Παξιμαδιαστή</span><span class="price">9,00€</span></div><div class="desc">παξιμάδι, Κρέμα φέτας, Ντοματίνια, Αγγούρι, Κρεμμύδι, Κάπαρη, Ελαιόλαδο</div></div>
+  <div class="item"><div class="item-row"><span class="name"><span class="el-text">Σαλάτα απ' το χωριό</span><span class="en-text">Greek Salad</span></span><span class="price">9,50€</span></div><div class="desc">Με φέτα ή ξινομυζήθρα</div></div>
+  <div class="item"><div class="item-row"><span class="name"><span class="el-text">Παξιμαδιαστή</span><span class="en-text">Ntakos</span></span><span class="price">9,00€</span></div><div class="desc">παξιμάδι, Κρέμα φέτας, Ντοματίνια, Αγγούρι, Κρεμμύδι, Κάπαρη, Ελαιόλαδο</div></div>
   <div class="item"><div class="item-row"><span class="name">Σαλάτα Ζυμαρικών με κοτόπουλο</span><span class="price">11,00€</span></div><div class="desc">Κοτόπουλο στήθος, Βίδες, Παρμεζάνα, Χρωματιστές πιπεριές, Αγγούρι, Dressing μαγιονέζας</div></div>
   <div class="item"><div class="item-row"><span class="name">Σαλάτα με ντοματίνια, κάπαρη, μυζήθρα &amp; λάδι βασιλικού</span><span class="price">11,00€</span></div></div>
   <div class="item"><div class="item-row"><span class="name">Παντζαροσαλάτα με γιαούρτι</span><span class="price">8,50€</span></div></div>
