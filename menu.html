@@ -60,6 +60,12 @@
   .catnav a:active{background:var(--tan);color:#fff8ec;}
   .nav-spacer{height:66px;}
   .wrap{max-width:440px;margin:0 auto;}
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:22px 0 22px;
+  }
   a.back{
     display:inline-flex;
     align-items:center;
@@ -70,9 +76,8 @@
     text-transform:uppercase;
     color:var(--tan-deep);
     text-decoration:none;
-    margin-bottom:22px;
   }
-     .langswitch{
+  .langswitch{
     display:inline-flex;
     align-items:center;
     gap:0;
@@ -107,13 +112,6 @@
     height:auto;
     margin:0 auto 6px;
   }
-  .title-img{
-    display:block;
-    width:260px;
-    max-width:85%;
-    height:auto;
-    margin:0 auto 6px;
-  }
   .sub{
     text-align:center;
     font-family:'IBM Plex Mono',monospace;
@@ -139,6 +137,7 @@
     margin:36px 0 6px;
     padding-bottom:8px;
     border-bottom:1px solid var(--line);
+    scroll-margin-top:76px;
   }
   .cat:first-of-type{margin-top:26px;}
   .cat .en{
