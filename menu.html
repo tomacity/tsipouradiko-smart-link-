@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,600;0,700;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
+   :root{
     --paper: #FBF3E7;
     --ink: #2B2118;
     --tan: #B89968;
@@ -23,9 +23,42 @@
     color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif;
     min-height:100dvh;
-    padding:36px 22px 70px;
+    padding:0 22px 70px;
     -webkit-tap-highlight-color:transparent;
+    scroll-behavior:smooth;
   }
+  html{scroll-behavior:smooth;}
+  .catnav{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:50;
+    background:rgba(251,243,231,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    padding:12px 14px;
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .catnav::-webkit-scrollbar{display:none;}
+  .catnav a{
+    flex:0 0 auto;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--tan-deep);
+    text-decoration:none;
+    background:#F6EDDD;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:7px 13px;
+    white-space:nowrap;
+  }
+  .catnav a:active{background:var(--tan);color:#fff8ec;}
+  .nav-spacer{height:66px;}
   .wrap{max-width:440px;margin:0 auto;}
   a.back{
     display:inline-flex;
@@ -130,6 +163,21 @@
 </style>
 </head>
 <body>
+<nav class="catnav">
+  <a href="#salades">Σαλάτες</a>
+  <a href="#orektika">Ορεκτικά</a>
+  <a href="#thalassina">Θαλασσινά</a>
+  <a href="#kreatika">Κρεατικά</a>
+  <a href="#zesta">Ζεστά</a>
+  <a href="#glyka">Γλυκά</a>
+  <a href="#krasia">Κρασιά</a>
+  <a href="#tsipouro">Τσίπουρο</a>
+  <a href="#ouzo">Ούζο</a>
+  <a href="#byres">Μπύρες</a>
+  <a href="#xyma">Χύμα</a>
+  <a href="#anapsyktika">Αναψυκτικά</a>
+</nav>
+<div class="nav-spacer"></div>
 <div class="wrap">
   <a class="back" href="index.html">← πίσω</a>
   <img class="title-img" src="tsipouradiko-title.png" alt="το Τσιπουράδικο της Μυρσίνης">
