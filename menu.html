@@ -221,7 +221,6 @@
     </div>
   </div>
    
-  <a class="back" href="index.html">← πίσω</a>
   <img class="title-img" src="tsipouradiko-title.png" alt="το Τσιπουράδικο της Μυρσίνης">
   <p class="sub"><span class="el-text">Μενού</span><span class="en-text">Menu</span></p>
 
@@ -231,7 +230,7 @@
   <div class="cat" id="salades">Σαλάτες <span class="en">· Salads</span></div>
   <div class="item"><div class="item-row"><span class="name"><span class="el-text">Σαλάτα απ' το χωριό</span><span class="en-text">Greek Salad</span></span><span class="price">9,50€</span></div><div class="desc">Με φέτα ή ξινομυζήθρα</div></div>
   <div class="item"><div class="item-row"><span class="name"><span class="el-text">Παξιμαδιαστή</span><span class="en-text">Ntakos</span></span><span class="price">9,00€</span></div><div class="desc">παξιμάδι, Κρέμα φέτας, Ντοματίνια, Αγγούρι, Κρεμμύδι, Κάπαρη, Ελαιόλαδο</div></div>
-  <div class="item"><div class="item-row"><span class="name">Σαλάτα Ζυμαρικών με κοτόπουλο</span><span class="price">11,00€</span></div><div class="desc">Κοτόπουλο στήθος, Βίδες, Παρμεζάνα, Χρωματιστές πιπεριές, Αγγούρι, Dressing μαγιονέζας</div></div>
+  <div class="item"><div class="item-row"><span class="name">Σαλάτα Ζυμαρικών με κοτόπουλο</span><span class="en-text">Pasta salad with chicken</span><span class="price">11,00€</span></div><div class="desc">Κοτόπουλο στήθος, Βίδες, Παρμεζάνα, Χρωματιστές πιπεριές, Αγγούρι, Dressing μαγιονέζας</div></div>
   <div class="item"><div class="item-row"><span class="name">Σαλάτα με ντοματίνια, κάπαρη, μυζήθρα &amp; λάδι βασιλικού</span><span class="price">11,00€</span></div></div>
   <div class="item"><div class="item-row"><span class="name">Παντζαροσαλάτα με γιαούρτι</span><span class="price">8,50€</span></div></div>
   <div class="item"><div class="item-row"><span class="name">Σαλάτα με πλιγούρι</span><span class="price">9,00€</span></div><div class="desc">Πλιγούρι, Ντοματίνια, Χρωματιστές πιπεριές, Αγγούρι, Κρεμμυδάκι φρέσκο &amp; ξερό, Φρέσκο δυόσμο</div></div>
@@ -378,5 +377,12 @@
     <img src="zisto-wordmark.png" alt="Zisto">
   </div>
 </div>
+<script>
+function setLang(lang){
+  document.body.classList.toggle('lang-en', lang === 'en');
+  document.getElementById('btn-el').classList.toggle('active', lang === 'el');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
+</script>
 </body>
 </html>
