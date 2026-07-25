@@ -8,18 +8,44 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".actions a").forEach(button => {
 
-    button.addEventListener("click", () => {
+    button.addEventListener("click", function(e){
 
-      gtag("event", "button_click", {
-        button_name: button.id,
-        button_text: button.textContent.trim(),
-        destination: button.href
+      e.preventDefault();
+
+      const url = this.href;
+      const target = this.target;
+
+      gtag("event","button_click",{
+        button_name:this.id,
+        button_text:this.innerText.trim(),
+        destination:url,
+
+        event_callback:function(){
+
+          if(target === "_blank"){
+            window.open(url,"_blank");
+          }else{
+            window.location.href = url;
+          }
+
+        }
+
       });
+
+      setTimeout(function(){
+
+        if(target === "_blank"){
+          window.open(url,"_blank");
+        }else{
+          window.location.href = url;
+        }
+
+      },700);
 
     });
 
