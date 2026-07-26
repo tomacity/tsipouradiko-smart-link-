@@ -8,58 +8,83 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+<!-- Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-X5XY0ZYW8N"
+></script>
 
-  document.querySelectorAll(".actions a").forEach(button => {
-
-    button.addEventListener("click", function(e){
-
-      e.preventDefault();
-
-      const url = this.href;
-      const target = this.target;
-
-      gtag("event","button_click",{
-        button_name:this.id,
-        button_text:this.innerText.trim(),
-        destination:url,
-
-        event_callback:function(){
-
-          if(target === "_blank"){
-            window.open(url,"_blank");
-          }else{
-            window.location.href = url;
-          }
-
-        }
-
-      });
-
-      setTimeout(function(){
-
-        if(target === "_blank"){
-          window.open(url,"_blank");
-        }else{
-          window.location.href = url;
-        }
-
-      },700);
-
-    });
-
-  });
-
-});
-</script>
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5XY0ZYW8N"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-X5XY0ZYW8N');
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+  gtag("config", "G-X5XY0ZYW8N");
+</script>
+
+<!-- Zisto tracking -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("menuBtn");
+    const reviewButton = document.getElementById("reviewBtn");
+
+    function trackInternalNavigation(eventName, button) {
+      const destination = button.href;
+      let navigationStarted = false;
+
+      function navigate() {
+        if (navigationStarted) {
+          return;
+        }
+
+        navigationStarted = true;
+        window.location.href = destination;
+      }
+
+      gtag("event", eventName, {
+        business_id: "myrsini",
+        business_name: "Το Τσιπουράδικο της Μυρσίνης",
+        destination: destination,
+        transport_type: "beacon",
+        event_callback: navigate
+      });
+
+      setTimeout(navigate, 700);
+    }
+
+    menuButton?.addEventListener("click", function (event) {
+      event.preventDefault();
+      trackInternalNavigation("menu_open", menuButton);
+    });
+
+    reviewButton?.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const destination = reviewButton.href;
+
+      const reviewWindow = window.open(
+        "about:blank",
+        "_blank"
+      );
+
+      gtag("event", "review_click", {
+        business_id: "myrsini",
+        business_name: "Το Τσιπουράδικο της Μυρσίνης",
+        destination: destination,
+        transport_type: "beacon"
+      });
+
+      if (reviewWindow) {
+        reviewWindow.opener = null;
+        reviewWindow.location.href = destination;
+      } else {
+        window.location.href = destination;
+      }
+    });
+  });
 </script>
   
 <style>
