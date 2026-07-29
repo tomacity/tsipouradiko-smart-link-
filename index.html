@@ -24,108 +24,6 @@
   gtag("js", new Date());
   gtag("config", "G-X5XY0ZYW8N");
 </script>
-
-<!-- Zisto tracking -->
-<script>
-  const ZISTO_TRACKING_URL =
-    "https://zistogr.vercel.app/api/track";
-
-  const ZISTO_IDS = {
-    business_id: "021c48d4-fccc-4ccb-b37c-d42c2e341aa0",
-    location_id: "f85ba64b-748e-45a3-af9c-3779715dc910",
-    landing_page_id: "b4ab6fa1-5511-4888-a4b4-490fba98070c"
-  };
-
-  function getZistoSessionId() {
-    const storageKey = "zisto_session_id";
-    let sessionId = sessionStorage.getItem(storageKey);
-
-    if (!sessionId) {
-      sessionId =
-        typeof crypto.randomUUID === "function"
-          ? crypto.randomUUID()
-          : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-
-      sessionStorage.setItem(storageKey, sessionId);
-    }
-
-    return sessionId;
-  }
-
-  function getZistoSource() {
-    const params = new URLSearchParams(window.location.search);
-    const source = params.get("source");
-
-    const allowedSources = [
-      "nfc",
-      "qr",
-      "direct",
-      "unknown"
-    ];
-
-    return allowedSources.includes(source)
-      ? source
-      : "direct";
-  }
-
-  function trackZistoEvent(eventName, metadata = {}) {
-    return fetch(ZISTO_TRACKING_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      keepalive: true,
-      body: JSON.stringify({
-        ...ZISTO_IDS,
-        card_id: null,
-        event_name: eventName,
-        session_id: getZistoSessionId(),
-        source: getZistoSource(),
-        metadata
-      })
-    }).catch(function (error) {
-      console.error("Zisto tracking failed:", error);
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuButton = document.getElementById("menuBtn");
-    const reviewButton = document.getElementById("reviewBtn");
-
-    trackZistoEvent("page_view", {
-      page: "main_smart_link",
-      path: window.location.pathname
-    });
-
-    menuButton?.addEventListener("click", function () {
-      trackZistoEvent("menu_open", {
-        button: "menu",
-        destination: menuButton.href
-      });
-
-      gtag("event", "menu_open", {
-        business_id: "myrsini",
-        business_name: "Το Τσιπουράδικο της Μυρσίνης",
-        destination: menuButton.href,
-        transport_type: "beacon"
-      });
-    });
-
-    reviewButton?.addEventListener("click", function () {
-      trackZistoEvent("review_click", {
-        button: "review",
-        destination: reviewButton.href
-      });
-
-      gtag("event", "review_click", {
-        business_id: "myrsini",
-        business_name: "Το Τσιπουράδικο της Μυρσίνης",
-        destination: reviewButton.href,
-        transport_type: "beacon"
-      });
-    });
-  });
-</script>
   
 <style>
   :root{
@@ -268,6 +166,46 @@
   </div>
   
   <script src="./tracker.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuButton =
+      document.getElementById("menuBtn");
+
+    const reviewButton =
+      document.getElementById("reviewBtn");
+
+    menuButton?.addEventListener("click", function () {
+      window.Zisto?.track("menu_open", {
+        button: "menu",
+        destination: menuButton.href
+      });
+
+      gtag("event", "menu_open", {
+        business_id: "myrsini",
+        business_name:
+          "Το Τσιπουράδικο της Μυρσίνης",
+        destination: menuButton.href,
+        transport_type: "beacon"
+      });
+    });
+
+    reviewButton?.addEventListener("click", function () {
+      window.Zisto?.track("review_open", {
+        button: "review",
+        destination: reviewButton.href
+      });
+
+      gtag("event", "review_click", {
+        business_id: "myrsini",
+        business_name:
+          "Το Τσιπουράδικο της Μυρσίνης",
+        destination: reviewButton.href,
+        transport_type: "beacon"
+      });
+    });
+  });
+</script>
   
 </body>
 </html>
