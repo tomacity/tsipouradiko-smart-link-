@@ -1,6 +1,6 @@
 (function () {
   const ZISTO_ENDPOINT =
-    "https://zisto.app/api/track";
+    "https://zistogr.vercel.app/api/track";
 
   const ZISTO_PROJECT_KEY =
     "7b3738aa-b22a-40ff-8bfc-5d38b2e6b1f5";
