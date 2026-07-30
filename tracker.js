@@ -182,9 +182,16 @@
 
       metadata: {
         source: getSource(),
+      
+        card_token:
+          params.get("card") ||
+          params.get("card_id") ||
+          null,
+      
         language: navigator.language,
         screen_width: window.screen.width,
         screen_height: window.screen.height,
+      
         ...metadata,
       },
     };
